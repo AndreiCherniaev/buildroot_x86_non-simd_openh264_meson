@@ -1,0 +1,51 @@
+From b866fb38cee87afb0068517138f871a772e16d05 Mon Sep 17 00:00:00 2001
+From: Cherniaev Andrei <dungeonlords789@naver.com>
+Date: Mon, 4 Nov 2024 16:44:19 +0900
+Subject: [PATCH 1/1] package/pkg-meson: use --clearcache instead of rm -rf
+
+I encountered a situation where build/ is not empty folder so when all files in build/ was removed by buildroot I was not able to use meson, example https://gitlab.com/buildroot.org/buildroot/-/issues/64
+
+Signed-off-by: Cherniaev Andrei <dungeonlords789@naver.com>
+---
+ package/pkg-meson.mk | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/package/pkg-meson.mk b/package/pkg-meson.mk
+index bc805b799c..2ddf0a95eb 100644
+--- a/package/pkg-meson.mk
++++ b/package/pkg-meson.mk
+@@ -147,7 +147,6 @@ $(2)_CXXFLAGS ?= $$(TARGET_CXXFLAGS)
+ #
+ #
+ define $(2)_CONFIGURE_CMDS
+-	rm -rf $$($$(PKG)_SRCDIR)/build
+ 	mkdir -p $$($$(PKG)_SRCDIR)/build
+ 	sed -e "/^\[binaries\]$$$$/s:$$$$:$$(foreach x,$$($(2)_MESON_EXTRA_BINARIES),\n$$(x)):" \
+ 	    -e "/^\[properties\]$$$$/s:$$$$:$$(foreach x,$$($(2)_MESON_EXTRA_PROPERTIES),\n$$(x)):" \
+@@ -163,6 +162,7 @@ define $(2)_CONFIGURE_CMDS
+ 		--default-library=$(PKG_MESON_DEFAULT_LIBRARY) \
+ 		--buildtype=$(if $(BR2_ENABLE_RUNTIME_DEBUG),debug,release) \
+ 		--cross-file=$$($$(PKG)_SRCDIR)/build/cross-compilation.conf \
++		--clearcache \
+ 		-Db_pie=false \
+ 		-Db_staticpic=$(if $(BR2_m68k_cf),false,true) \
+ 		-Dstrip=false \
+@@ -175,7 +175,6 @@ else
+ 
+ # Configure package for host
+ define $(2)_CONFIGURE_CMDS
+-	rm -rf $$($$(PKG)_SRCDIR)/build
+ 	mkdir -p $$($$(PKG)_SRCDIR)/build
+ 	$$(HOST_CONFIGURE_OPTS) \
+ 	$$($$(PKG)_CONF_ENV) $$(MESON) setup \
+@@ -186,6 +185,7 @@ define $(2)_CONFIGURE_CMDS
+ 		--default-library=shared \
+ 		--buildtype=release \
+ 		--wrap-mode=nodownload \
++		--clearcache \
+ 		-Dstrip=true \
+ 		$$($$(PKG)_CONF_OPTS) \
+ 		$$($$(PKG)_SRCDIR) $$($$(PKG)_SRCDIR)/build
+-- 
+2.43.0
+

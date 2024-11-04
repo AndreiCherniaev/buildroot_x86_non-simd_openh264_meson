@@ -1,4 +1,5 @@
-How to build Linux image based on pc_x86_64_bios_defconfig but with libv4l while glibc's BR2_TIME_BITS_64 is enabled.
+How to build Linux image with openh264 for non-SIMD X86 CPU (like Geode). Let's try to use not makefile but moder build system meson, see [topic in cisco repo](https://github.com/cisco/openh264/issues/3545#issuecomment-2453704293) and buildroot [issue](https://gitlab.com/buildroot.org/buildroot/-/issues/64).
+
 ## Compare with pc_x86_64_bios_defconfig
 Config [qemu_x86_openh264_defconfig](my_external_tree/configs/qemu_x86_openh264_defconfig) is based on [qemu_x86_defconfig](https://github.com/buildroot/buildroot/blob/e82217622ea4778148de82a4b77972940b5e9a9e/configs/qemu_x86_defconfig).
 
@@ -7,6 +8,8 @@ Config [qemu_x86_openh264_defconfig](my_external_tree/configs/qemu_x86_openh264_
 git clone --remote-submodules --recurse-submodules -j8 https://github.com/AndreiCherniaev/buildroot_x86_non-simd_openh264_meson.git
 cd buildroot_x86_non-simd_openh264_meson
 ```
+## Add my patch
+[Patch](https://buildroot.org/downloads/manual/manual.html#_adding_project_specific_patches_and_hashes) buildroot using file "0001-package-libopenh264-prepare-to-switch-it-to-meson-bu.patch"
 ## Make image
 ```
 make clean -C buildroot
@@ -25,8 +28,10 @@ qemu-system-i386 -M pc -drive file=output/images/disk.img,if=virtio,format=raw -
 ```
 Note: image file `Buildroot.img` is located outside of repo folder so we use `../`. Optionally add `-nographic` to see output not in extra screen but in console terminal. Or `-display curses` to pseudographic.
 
-##Problems
+## Problems
+In case of problems to fix it and then build again
 ```
-
+make libopenh264-dirclean -C buildroot
+make libopenh264-rebuild -C buildroot 2>&1 |tee libopenh264.log
 ```
-see `build.log`
+see `libopenh264.log`

@@ -1,0 +1,80 @@
+make: Entering directory '/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot'
+rm -f /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/build/libopenh264-2.4.1/.stamp_installed
+rm -f /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/build/libopenh264-2.4.1/.stamp_staging_installed
+rm -f /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/build/libopenh264-2.4.1/.stamp_target_installed
+rm -f /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/build/libopenh264-2.4.1/.stamp_images_installed
+rm -f /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/build/libopenh264-2.4.1/.stamp_host_installed
+rm -f /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/build/libopenh264-2.4.1/.stamp_built
+libopenh264-2.4.1.tar.gz: OK (sha256: 8ffbe944e74043d0d3fb53d4a2a14c94de71f58dbea6a06d0dc92369542958ea)
+[7m>>> libopenh264 2.4.1 Extracting[27m
+gzip -d -c /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/dl/libopenh264/libopenh264-2.4.1.tar.gz | tar --strip-components=1 -C /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/build/libopenh264-2.4.1   -xf -
+[7m>>> libopenh264 2.4.1 Patching[27m
+[7m>>> libopenh264 2.4.1 Configuring[27m
+rm -rf /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/build/libopenh264-2.4.1//build
+mkdir -p /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/build/libopenh264-2.4.1//build
+sed -e "/^\[binaries\]$/s:$::" -e "/^\[properties\]$/s:$::"         -e "s%@TARGET_CC@%/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-gcc%g" -e "s%@TARGET_CXX@%/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-g++%g" -e "s%@TARGET_AR@%/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-gcc-ar%g" -e "s%@TARGET_FC@%/bin/false%g" -e "s%@TARGET_STRIP@%/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-strip%g" -e "s%@TARGET_ARCH@%x86%g" -e "s%@TARGET_CPU@%%g" -e "s%@TARGET_ENDIAN@%little%g" -e "s%@TARGET_FCFLAGS@%%g" -e "s%@TARGET_CFLAGS@%'-D_LARGEFILE_SOURCE', '-D_LARGEFILE64_SOURCE', '-D_FILE_OFFSET_BITS=64', '-O2', '-g0', '-D_FORTIFY_SOURCE=1'%g" -e "s%@TARGET_LDFLAGS@%%g" -e "s%@TARGET_CXXFLAGS@%'-D_LARGEFILE_SOURCE', '-D_LARGEFILE64_SOURCE', '-D_FILE_OFFSET_BITS=64', '-O2', '-g0', '-D_FORTIFY_SOURCE=1'%g" -e "s%@BR2_CMAKE@%/usr/bin/cmake%g" -e "s%@PKGCONF_HOST_BINARY@%/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/pkgconf%g" -e "s%@HOST_DIR@%/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host%g" -e "s%@STAGING_DIR@%/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/i686-buildroot-linux-gnu/sysroot%g" -e "s%@STATIC@%false%g" /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/support/misc/cross-compilation.conf.in > /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/build/libopenh264-2.4.1//build/cross-compilation.conf
+PATH="/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin:/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/sbin:/home/a/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin" CC_FOR_BUILD="/usr/bin/gcc" CXX_FOR_BUILD="/usr/bin/g++"  PYTHONNOUSERSITE=y /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/meson setup --prefix=/usr --libdir=lib --default-library=shared --buildtype=release --cross-file=/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/build/libopenh264-2.4.1//build/cross-compilation.conf -Db_pie=false -Db_staticpic=true -Dstrip=false -Dbuild.pkg_config_path=/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/lib/pkgconfig -Dbuild.cmake_prefix_path=/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/lib/cmake  /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/build/libopenh264-2.4.1/ /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/build/libopenh264-2.4.1//build
+The Meson build system
+Version: 1.6.0
+Source dir: /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/build/libopenh264-2.4.1
+Build dir: /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/build/libopenh264-2.4.1/build
+Build type: cross build
+Project name: openh264
+Project version: 2.4.1
+C compiler for the host machine: /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-gcc (gcc 13.3.0 "i686-buildroot-linux-gnu-gcc.br_real (Buildroot 2024.08-1338-gd74a5a218f-dirty) 13.3.0")
+C linker for the host machine: /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-gcc ld.bfd 2.42
+C++ compiler for the host machine: /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-g++ (gcc 13.3.0 "i686-buildroot-linux-gnu-g++.br_real (Buildroot 2024.08-1338-gd74a5a218f-dirty) 13.3.0")
+C++ linker for the host machine: /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-g++ ld.bfd 2.42
+C compiler for the build machine: /usr/bin/gcc (gcc 13.2.0 "gcc (Ubuntu 13.2.0-23ubuntu4) 13.2.0")
+C linker for the build machine: /usr/bin/gcc ld.bfd 2.42
+C++ compiler for the build machine: /usr/bin/g++ (gcc 13.2.0 "g++ (Ubuntu 13.2.0-23ubuntu4) 13.2.0")
+C++ linker for the build machine: /usr/bin/g++ ld.bfd 2.42
+Build machine cpu family: x86_64
+Build machine cpu: x86_64
+Host machine cpu family: x86
+Host machine cpu: 
+Target machine cpu family: x86
+Target machine cpu: 
+Compiler for C++ supports arguments -Wno-non-virtual-dtor: YES 
+Compiler for C++ supports arguments -Wno-class-memaccess: YES 
+Compiler for C++ supports arguments -Wno-strict-aliasing: YES 
+Run-time dependency threads found: YES
+Library m found: YES
+Program nasm found: YES (/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/nasm)
+Found pkg-config: YES (/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/pkgconf) 1.6.3
+Run-time dependency GTest found: NO (tried pkgconfig and system)
+Looking for a fallback subproject for the dependency gtest
+Automatic wrap-based subproject downloading is disabled
+Subproject  gtest is buildable: NO (disabling)
+Dependency gtest from subproject gtest found: NO (subproject failed to configure)
+Run-time dependency GTest found: NO (tried pkgconfig and system)
+Looking for a fallback subproject for the dependency gtest
+Dependency gtest from subproject gtest found: NO (subproject failed to configure)
+Build targets in project: 8
+
+openh264 2.4.1
+
+  Subprojects
+    gtest                  : NO
+                             Automatic wrap-based subproject downloading is disabled
+
+  User defined options
+    Cross files            : /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/build/libopenh264-2.4.1//build/cross-compilation.conf
+    build.cmake_prefix_path: /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/lib/cmake
+    build.pkg_config_path  : /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/lib/pkgconfig
+    b_pie                  : false
+    b_staticpic            : true
+    buildtype              : release
+    default_library        : shared
+    libdir                 : lib
+    prefix                 : /usr
+    strip                  : false
+
+Found ninja-1.11.1.git.kitware.jobserver-1 at /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/ninja
+[7m>>> libopenh264 2.4.1 Building[27m
+GIT_DIR=. PATH="/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin:/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/sbin:/home/a/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin" GIT_DIR=. PATH="/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin:/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/sbin:/home/a/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin" AR="/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-gcc-ar" AS="/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-as" LD="/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-ld" NM="/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-gcc-nm" CC="/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-gcc" GCC="/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-gcc" CPP="/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-cpp" CXX="/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-g++" FC="/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-gfortran" F77="/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-gfortran" RANLIB="/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-gcc-ranlib" READELF="/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-readelf" STRIP="/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-strip" OBJCOPY="/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-objcopy" OBJDUMP="/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-objdump" AR_FOR_BUILD="/usr/bin/ar" AS_FOR_BUILD="/usr/bin/as" CC_FOR_BUILD="/usr/bin/gcc" GCC_FOR_BUILD="/usr/bin/gcc" CXX_FOR_BUILD="/usr/bin/g++" LD_FOR_BUILD="/usr/bin/ld" CPPFLAGS_FOR_BUILD="-I/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/include" CFLAGS_FOR_BUILD="-O2 -I/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/include" CXXFLAGS_FOR_BUILD="-O2 -I/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/include" LDFLAGS_FOR_BUILD="-L/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/lib -Wl,-rpath,/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/lib" FCFLAGS_FOR_BUILD="" DEFAULT_ASSEMBLER="/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-as" DEFAULT_LINKER="/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/i686-buildroot-linux-gnu-ld" CPPFLAGS="-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64" CFLAGS="-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64  -O2 -g0 -D_FORTIFY_SOURCE=1" CXXFLAGS="-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64  -O2 -g0 -D_FORTIFY_SOURCE=1" LDFLAGS="" FCFLAGS=" -O2 -g0" FFLAGS=" -O2 -g0" PKG_CONFIG="/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/bin/pkg-config" STAGING_DIR="/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/host/i686-buildroot-linux-gnu/sysroot" INTLTOOL_PERL=/usr/bin/perl /usr/bin/make -j17 -C /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/build/libopenh264-2.4.1 ARCH=x86 ENABLE64BIT=No USE_STACK_PROTECTOR=No
+Makefile:94: build/platform-linux.mk: No such file or directory
+make[2]: *** No rule to make target 'build/platform-linux.mk'.  Stop.
+make[1]: *** [package/pkg-generic.mk:289: /home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot/output/build/libopenh264-2.4.1/.stamp_built] Error 2
+make: *** [Makefile:83: _all] Error 2
+make: Leaving directory '/home/a/mycode/buildroot_x86_non-simd_openh264_meson/buildroot'
